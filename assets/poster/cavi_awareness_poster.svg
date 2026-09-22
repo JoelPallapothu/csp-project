@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#091b36"/>
+      <stop offset="25%" stop-color="#0f2b5c"/>
+      <stop offset="60%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="alertGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="50%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Poster Canvas -->
+  <rect width="1200" height="1680" fill="url(#bgGrad)"/>
+
+  <!-- Top Academic / Community Header Banner -->
+  <rect x="0" y="0" width="1200" height="70" fill="#020617" opacity="0.8"/>
+  <text x="600" y="44" text-anchor="middle" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="20" fill="#38bdf8" letter-spacing="2">
+    COMMUNITY SERVICE PROJECT (CSP) • CYBER SECURITY AWARENESS FOR RURAL INDIA
+  </text>
+
+  <!-- Decorative Circuit Traces -->
+  <path d="M 50 120 L 200 120 L 240 160 L 400 160" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.3"/>
+  <circle cx="50" cy="120" r="5" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="400" cy="160" r="4" fill="#38bdf8" opacity="0.5"/>
+  <path d="M 1150 120 L 1000 120 L 960 160 L 800 160" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.3"/>
+  <circle cx="1150" cy="120" r="5" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="800" cy="160" r="4" fill="#38bdf8" opacity="0.5"/>
+
+  <!-- Main Project Title Section -->
+  <text x="600" y="145" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="52" fill="#ffffff" letter-spacing="2">
+    CYBER AWARE VILLAGE INITIATIVE (CAVI)
+  </text>
+  <text x="600" y="200" text-anchor="middle" font-family="'Segoe UI', 'Gautami', 'Nirmala UI', sans-serif" font-weight="800" font-size="34" fill="url(#goldGrad)">
+    గ్రామీణ ప్రజలకు సైబర్ మోసాల నివారణ అవగాహన ప్రచారం
+  </text>
+  <text x="600" y="240" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="600" font-size="21" fill="#93c5fd">
+    "Raising Awareness to Prevent Cyber Fraud Among Illiterate and Semi-Literate Villagers"
+  </text>
+
+  <!-- Tagline Badge -->
+  <rect x="250" y="265" width="700" height="48" rx="24" fill="#1e293b" stroke="#38bdf8" stroke-width="2" filter="url(#dropShadow)"/>
+  <text x="600" y="297" text-anchor="middle" font-family="'Segoe UI', 'Gautami', sans-serif" font-weight="700" font-size="20" fill="#f8fafc">
+    🛡️ జాగ్రత్తగా ఉండండి – సైబర్ మోసాల నుండి మిమ్మల్ని మీరు రక్షించుకోండి
+  </text>
+
+  <!-- Emergency 1930 Helpline Banner -->
+  <rect x="60" y="335" width="1080" height="110" rx="18" fill="url(#alertGrad)" stroke="#fecaca" stroke-width="3" filter="url(#dropShadow)"/>
+  <text x="100" y="385" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff">
+    🚨 సైబర్ మోసం జరిగిందా? DON'T PANIC!
+  </text>
+  <text x="100" y="420" font-family="'Segoe UI', 'Gautami', sans-serif" font-weight="700" font-size="20" fill="#fef08a">
+    మోసం జరిగిన 2-3 గంటల్లోపు వెంటనే కాల్ చేయండి (Golden Hour):
+  </text>
+  <rect x="780" y="352" width="330" height="75" rx="14" fill="#ffffff" filter="url(#dropShadow)"/>
+  <text x="945" y="402" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="38" fill="#dc2626">
+    📞 1930
+  </text>
+  <text x="945" y="422" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="12" fill="#1e293b">
+    NATIONAL CYBER HELPLINE
+  </text>
+
+  <!-- Section Header: 5 Major Frauds in Villages -->
+  <text x="600" y="490" text-anchor="middle" font-family="'Segoe UI', 'Gautami', sans-serif" font-weight="900" font-size="32" fill="#ffffff">
+    ⚠️ గ్రామీణ ప్రాంతాల్లో ఎక్కువగా జరిగే 5 ప్రధాన మోసాలు
+  </text>
+  <line x1="300" y1="505" x2="900" y2="505" stroke="#38bdf8" stroke-width="3"/>
+
+  <!-- Fraud Card 1: OTP Fraud -->
+  <rect x="60" y="530" width="340" height="280" rx="16" fill="url(#cardGrad)" filter="url(#dropShadow)"/>
+  <rect x="60" y="530" width="340" height="50" rx="16" fill="#dc2626"/>
+  <text x="85" y="563" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="22" fill="#ffffff">🔐 1. ఓటీపీ (OTP) మోసం</text>
+  <text x="85" y="615" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#0f172a">ఏమి జరుగుతుంది?</text>
+  <text x="85" y="642" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">బ్యాంక్ మేనేజర్ లేదా ఆఫీసర్ అని</text>
+  <text x="85" y="664" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">చెప్పి ఫోన్ కు వచ్చిన ఓటీపీ అడుగుతారు.</text>
+  <rect x="80" y="695" width="300" height="50" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="230" y="726" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="16" fill="#991b1b">
+    ❌ ఓటీపీ ఎవరికీ ఎప్పుడూ చెప్పవద్దు!
+  </text>
+  <text x="230" y="785" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="#0284c7">
+    బ్యాంకులు ఫోన్‌లో ఓటీపీ అడగవు
+  </text>
+
+  <!-- Fraud Card 2: UPI Fraud -->
+  <rect x="430" y="530" width="340" height="280" rx="16" fill="url(#cardGrad)" filter="url(#dropShadow)"/>
+  <rect x="430" y="530" width="340" height="50" rx="16" fill="#ea580c"/>
+  <text x="455" y="563" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="22" fill="#ffffff">💳 2. యూపీఐ (UPI) మోసం</text>
+  <text x="455" y="615" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#0f172a">ఏమి జరుగుతుంది?</text>
+  <text x="455" y="642" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">డబ్బులు పంపిస్తున్నామని చెప్పి</text>
+  <text x="455" y="664" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">రిసీవ్ చేసుకోవడానికి పిన్ కొట్టమంటారు.</text>
+  <rect x="450" y="695" width="300" height="50" rx="8" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <text x="600" y="726" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="16" fill="#c2410c">
+    ❌ డబ్బులు రావడానికి పిన్ అవసరం లేదు!
+  </text>
+  <text x="600" y="785" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="#0284c7">
+    పిన్ కేవలం పంపడానికి మాత్రమే
+  </text>
+
+  <!-- Fraud Card 3: Fake KYC -->
+  <rect x="800" y="530" width="340" height="280" rx="16" fill="url(#cardGrad)" filter="url(#dropShadow)"/>
+  <rect x="800" y="530" width="340" height="50" rx="16" fill="#b91c1c"/>
+  <text x="825" y="563" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="22" fill="#ffffff">🏦 3. బ్యాంక్ కేవైసీ మోసం</text>
+  <text x="825" y="615" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#0f172a">ఏమి జరుగుతుంది?</text>
+  <text x="825" y="642" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">అకౌంట్ బ్లాక్ అవుతుందని లింక్ పంపి</text>
+  <text x="825" y="664" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">పాస్ వర్డ్ లు దొంగిలిస్తారు.</text>
+  <rect x="820" y="695" width="300" height="50" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.5"/>
+  <text x="970" y="726" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="16" fill="#991b1b">
+    ❌ ఎస్ఎంఎస్ లింకులు నొక్కవద్దు!
+  </text>
+  <text x="970" y="785" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="#0284c7">
+    కేవైసీకి స్వయంగా బ్యాంక్‌కే వెళ్లండి
+  </text>
+
+  <!-- Fraud Card 4: Fake Lottery -->
+  <rect x="245" y="835" width="340" height="280" rx="16" fill="url(#cardGrad)" filter="url(#dropShadow)"/>
+  <rect x="245" y="835" width="340" height="50" rx="16" fill="#d97706"/>
+  <text x="270" y="868" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="22" fill="#ffffff">🎁 4. లాటరీ / బహుమతి మోసం</text>
+  <text x="270" y="920" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#0f172a">ఏమి జరుగుతుంది?</text>
+  <text x="270" y="947" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">₹25 లక్షల లాటరీ తగిలిందని చెప్పి</text>
+  <text x="270" y="969" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">ముందుగా ఫీజు పేరిట డబ్బులు లాగుతారు.</text>
+  <rect x="265" y="1000" width="300" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="415" y="1031" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="16" fill="#b45309">
+    ❌ ఉచిత లాటరీల ఆశ పడకండి!
+  </text>
+  <text x="415" y="1090" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="#0284c7">
+    టికెట్ కొనకుండా లాటరీ రాదు
+  </text>
+
+  <!-- Fraud Card 5: Screen Sharing -->
+  <rect x="615" y="835" width="340" height="280" rx="16" fill="url(#cardGrad)" filter="url(#dropShadow)"/>
+  <rect x="615" y="835" width="340" height="50" rx="16" fill="#7c3aed"/>
+  <text x="640" y="868" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="22" fill="#ffffff">📱 5. స్క్రీన్ షేరింగ్ మోసం</text>
+  <text x="640" y="920" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#0f172a">ఏమి జరుగుతుంది?</text>
+  <text x="640" y="947" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">AnyDesk, QuickSupport యాప్స్ వేయించి</text>
+  <text x="640" y="969" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="15" fill="#334155">ఫోన్ లోని పాస్ వర్డ్ లు చూసి లూటీ చేస్తారు.</text>
+  <rect x="635" y="1000" width="300" height="50" rx="8" fill="#f3e8ff" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="785" y="1031" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="16" fill="#6b21a8">
+    ❌ అపరిచిత యాప్‌లను ఎక్కించవద్దు!
+  </text>
+  <text x="785" y="1090" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="14" fill="#0284c7">
+    స్క్రీన్ కోడ్ ఎవరికీ చెప్పకండి
+  </text>
+
+  <!-- Section: 10 Golden Safety Rules Grid -->
+  <rect x="60" y="1145" width="1080" height="350" rx="18" fill="#ffffff" filter="url(#dropShadow)"/>
+  <rect x="60" y="1145" width="1080" height="50" rx="18" fill="#0f2b5c"/>
+  <text x="600" y="1178" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="24" fill="#ffffff">
+    🛡️ సైబర్ రక్షణ 5 సువర్ణ సూత్రాలు (5 Golden Safety Rules)
+  </text>
+
+  <g transform="translate(90, 1220)" font-family="'Segoe UI', sans-serif" font-size="18" fill="#0f172a">
+    <text x="0" y="0" font-weight="800" fill="#16a34a">1️⃣ ఎవరికీ ఓటీపీ (OTP) చెప్పవద్దు</text>
+    <text x="40" y="24" font-size="15" fill="#475569">బ్యాంక్ మేనేజర్ అయినా, ఎవరైనా సరే ఫోన్‌లో ఓటీపీ అడగరు.</text>
+
+    <text x="560" y="0" font-weight="800" fill="#16a34a">2️⃣ డబ్బులు రావడానికి పిన్ అవసరం లేదు</text>
+    <text x="600" y="24" font-size="15" fill="#475569">డబ్బులు పంపడానికి మాత్రమే UPI పిన్ కొట్టాలి.</text>
+
+    <text x="0" y="80" font-weight="800" fill="#16a34a">3️⃣ అపరిచిత లింకులు నొక్కవద్దు</text>
+    <text x="40" y="104" font-size="15" fill="#475569">ఉచిత రీఛార్జ్, కరెంట్ కట్ అని వచ్చే లింకులు నొక్కితే ఫోన్ హ్యాక్ అవుతుంది.</text>
+
+    <text x="560" y="80" font-weight="800" fill="#16a34a">4️⃣ AnyDesk లాంటి యాప్స్ వేయవద్దు</text>
+    <text x="600" y="104" font-size="15" fill="#475569">స్క్రీన్ షేరింగ్ ద్వారా మీ పాస్‌వర్డ్‌లను మోసగాళ్లు చూస్తారు.</text>
+
+    <text x="0" y="160" font-weight="800" fill="#16a34a">5️⃣ మోసం జరిగితే వెంటనే 1930 కు కాల్ చేయండి</text>
+    <text x="40" y="184" font-size="15" fill="#475569">మొదటి 2-3 గంటల్లో ఫిర్యాదు చేస్తే డబ్బులు వెనక్కి వచ్చే అవకాశం ఎక్కువ.</text>
+
+    <!-- Official Portal Box -->
+    <rect x="0" y="220" width="1020" height="40" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="510" y="246" text-anchor="middle" font-weight="700" font-size="16" fill="#0f2b5c">
+      🌐 అధికారిక ఫిర్యాదు పోర్టల్: https://cybercrime.gov.in • జాతీయ హెల్ప్‌లైన్: 1930
+    </text>
+  </g>
+
+  <!-- Bottom Poster Footer -->
+  <rect x="0" y="1520" width="1200" height="160" fill="#030712"/>
+  <text x="100" y="1565" font-family="'Segoe UI', sans-serif" font-weight="800" font-size="22" fill="#ffffff">
+    CYBER AWARE VILLAGE INITIATIVE (CAVI)
+  </text>
+  <text x="100" y="1595" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="16" fill="#94a3b8">
+    A Community Service Project Dedicated to Grassroots Cyber Safety Education in Andhra Pradesh
+  </text>
+  <text x="100" y="1625" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#38bdf8">
+    Designed for Village Secretariats (Grama Sachivalayam), Panchayats, SHGs, and Rural Communities
+  </text>
+  
+  <rect x="900" y="1545" width="220" height="90" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="1010" y="1582" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="28" fill="#f8fafc">1930</text>
+  <text x="1010" y="1612" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="13" fill="#38bdf8">DIAL IMMEDIATELY</text>
+</svg>
