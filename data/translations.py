@@ -43,10 +43,11 @@ TRANSLATIONS = {
         "audio_playing": "ధ్వని వినబడుతోంది...",
         
         # Emergency Bar
-        "emergency_alert_title": "🚨 సైబర్ మోసం జరిగిందా? భయపడకండి - వెంటనే 1930 కు కాల్ చేయండి!",
-        "emergency_call_btn": "📞 1930 కి కాల్ చేయండి",
-        "emergency_portal_btn": "🌐 నేషనల్ సైబర్ క్రైమ్ పోర్టల్",
+        "emergency_alert_title": "సైబర్ మోసం జరిగిందా? భయపడకండి — వెంటనే 1930 కు కాల్ చేయండి!",
+        "emergency_call_btn": "1930 కు కాల్ చేయండి",
+        "emergency_portal_btn": "cybercrime.gov.in",
         "emergency_golden_hour": "గోల్డెన్ అవర్: మోసం జరిగిన 2-3 గంటల్లోపు ఫిర్యాదు చేస్తే మీ డబ్బులు తిరిగి వచ్చే అవకాశం ఎక్కువ!",
+        "college_credit": "ఈ వెబ్సైట్ను శేషాద్రి రావు గుడ్లవల్లేరు ఇంజినీరింగ్ కాలేజ్ విద్యార్థులు, కంప్యూటర్ సైన్స్ & ఇంజినీరింగ్ విభాగం రూపొందించారు.",
         
         # Hero Section
         "hero_title": "మీ స్మార్ట్‌ఫోన్ భద్రత – మీ చేతుల్లోనే!",
@@ -58,9 +59,9 @@ TRANSLATIONS = {
         "hero_btn_report": "మోసాన్ని నివేదించండి 🚨",
         
         # Home Compact Emergency Card
-        "home_emergency_title": "🚨 సైబర్ మోసం జరిగిందా? వెంటనే 1930 కి కాల్ చేయండి!",
+        "home_emergency_title": "సైబర్ మోసం జరిగిందా? వెంటనే 1930 కు కాల్ చేయండి!",
         "home_emergency_desc": "గోల్డెన్ అవర్: మోసం జరిగిన 2-3 గంటల్లోపు ఫిర్యాదు చేస్తే స్కామర్ల ఖాతాలు స్తంభింపజేసి, మీ డబ్బును రక్షించే అవకాశం చాలా ఎక్కువ. నేషనల్ సైబర్ క్రైమ్ పోర్టల్‌లో కూడా ఫిర్యాదు చేయండి.",
-        "home_emergency_portal_btn": "🌐 cybercrime.gov.in లో ఫిర్యాదు చేయండి",
+        "home_emergency_portal_btn": "cybercrime.gov.in",
         
         # Stats
         "stat_tips_title": "రక్షణ సూత్రాలు",
@@ -139,10 +140,11 @@ TRANSLATIONS = {
         "audio_playing": "Playing audio...",
         
         # Emergency Bar
-        "emergency_alert_title": "🚨 CYBER FRAUD HAPPENED? DON'T PANIC – CALL 1930 IMMEDIATELY!",
-        "emergency_call_btn": "📞 Call 1930 Now",
-        "emergency_portal_btn": "🌐 National Cyber Crime Portal",
+        "emergency_alert_title": "Cyber fraud happened? Don't panic — report immediately!",
+        "emergency_call_btn": "Call 1930",
+        "emergency_portal_btn": "cybercrime.gov.in",
         "emergency_golden_hour": "Golden Hour: Reporting within 2-3 hours dramatically increases the chance of recovering your funds!",
+        "college_credit": "This website is made by Seshadri Rao Gudlavalleru Engineering College students, Computer Science & Engineering Department.",
         
         # Hero Section
         "hero_title": "Your Smartphone Safety is in Your Hands!",
@@ -154,9 +156,9 @@ TRANSLATIONS = {
         "hero_btn_report": "Report Fraud 🚨",
         
         # Home Compact Emergency Card
-        "home_emergency_title": "🚨 CYBER FRAUD HAPPENED? CALL 1930 IMMEDIATELY!",
+        "home_emergency_title": "Cyber fraud happened? Call 1930 immediately!",
         "home_emergency_desc": "Golden Hour: Report within 2-3 hours to freeze fraud accounts and maximize fund recovery chance. Lodge an official complaint online at cybercrime.gov.in.",
-        "home_emergency_portal_btn": "🌐 Report on cybercrime.gov.in",
+        "home_emergency_portal_btn": "cybercrime.gov.in",
         
         # Stats
         "stat_tips_title": "Safety Guidelines",

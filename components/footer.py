@@ -19,6 +19,12 @@ def render_footer():
     csp_title = "కమ్యూనిటీ సర్వీస్ ప్రాజెక్ట్ (Community Service Project - CSP)" if lang == "te" else "Community Service Project (CSP) Educational Outreach"
     foot_tag = "ఆంధ్రప్రదేశ్ గ్రామీణ వర్గాల డిజిటల్ రక్షణకై రూపొందించబడింది • 2026" if lang == "te" else "Empowering Rural Citizens with Digital Security • Andhra Pradesh 2026"
 
+    college_credit = (
+        "ఈ వెబ్సైట్ను శేషాద్రి రావు గుడ్లవల్లేరు ఇంజినీరింగ్ కాలేజ్ విద్యార్థులు, కంప్యూటర్ సైన్స్ & ఇంజినీరింగ్ విభాగం రూపొందించారు."
+        if lang == "te" else
+        "This website is made by Seshadri Rao Gudlavalleru Engineering College students, Computer Science & Engineering Department."
+    )
+
     render_html(f"""
     <div class="cavi-footer">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-bottom: 28px;">
@@ -81,6 +87,12 @@ def render_footer():
             <div style="font-weight: 800; color: #ffffff;">
                 {foot_tag}
             </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.18); margin: 20px 0 14px 0;">
+
+        <div style="text-align: center; color: #ffffff; font-size: 0.98rem; font-weight: 750; line-height: 1.6; padding: 2px 0;">
+            🎓 {college_credit}
         </div>
     </div>
     """)

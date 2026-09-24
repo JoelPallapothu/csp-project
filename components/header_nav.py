@@ -6,6 +6,7 @@ Desktop-First, Full-Width Design with Zero Text Clipping.
 """
 
 import streamlit as st
+import streamlit.components.v1 as components
 from data.translations import get_text
 from utils.helpers import get_current_lang, set_current_lang, get_current_page, navigate_to, calculate_safety_score
 from utils.styling import render_html
@@ -81,16 +82,19 @@ def render_sidebar_nav():
         st.sidebar.progress(score / 100)
 
         # 4. Emergency Quick Call in Sidebar
+        em_side_title = "24x7 సైబర్ హెల్ప్‌లైన్" if lang == "te" else "24x7 Cyber Helpline"
+        em_side_btn = "1930 కి కాల్" if lang == "te" else "Call 1930"
+        em_side_sub = "మోసపోయిన వెంటనే డయల్ చేయండి" if lang == "te" else "Dial immediately if scammed"
         render_html(f"""
         <div style="background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%); border-radius: 14px; padding: 14px 12px; margin: 16px 0; color: white; text-align: center; border: 1.5px solid #fca5a5; box-shadow: 0 4px 12px rgba(220,38,38,0.25);">
             <div style="font-size: 0.84rem; font-weight: 800; color: #fee2e2; margin-bottom: 4px;">
-                🚨 24x7 సైబర్ హెల్ప్‌లైన్
+                🚨 {em_side_title}
             </div>
             <a href="tel:1930" style="background: #ffffff; color: #dc2626; padding: 8px 18px; border-radius: 9999px; font-weight: 950; font-size: 1.15rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                <span>📞</span> <span>1930 కి కాల్</span>
+                <span>📞</span> <span>{em_side_btn}</span>
             </a>
             <div style="font-size: 0.74rem; color: #fecaca; margin-top: 6px;">
-                మోసపోయిన వెంటనే డయల్ చేయండి
+                {em_side_sub}
             </div>
         </div>
         """)
@@ -135,6 +139,7 @@ def render_header_nav():
     Renders:
     1. Dedicated Left Sidebar with full navigation menu and bottom language switcher.
     2. Clean Main Page Utility Header and Top Emergency Strip.
+    3. Automatic Scroll-to-Top Anchor to ensure sections always start from the top.
     """
     lang = get_current_lang()
     current_page = get_current_page()
@@ -156,6 +161,7 @@ def render_header_nav():
     active_label = page_labels.get(current_page, "")
 
     # Top Utility Bar in Main Area
+    help_txt = "హెల్ప్‌లైన్" if lang == "te" else "Helpline"
     render_html(f"""
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding: 8px 0 12px 0;">
         <div style="display: flex; align-items: center; gap: 12px;">
@@ -176,7 +182,7 @@ def render_header_nav():
         </div>
         <div style="display: flex; align-items: center; gap: 12px;">
             <a href="tel:1930" style="background: #fee2e2; color: #dc2626; border: 1.5px solid #fca5a5; padding: 6px 16px; border-radius: 9999px; font-weight: 900; text-decoration: none; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 6px;">
-                <span>📞</span> <span>1930 Helpline</span>
+                <span>📞</span> <span>1930 {help_txt}</span>
             </a>
             <span style="background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; padding: 5px 12px; border-radius: 9999px; font-weight: 800; font-size: 0.85rem;">
                 🌐 {('తెలుగు' if lang == 'te' else 'English')}
@@ -185,11 +191,11 @@ def render_header_nav():
     </div>
     """)
 
-    # Emergency Alert Strip (Top notification)
+    # Emergency Alert Strip (Top notification - exactly one icon per element)
     render_html(f"""
     <div class="emergency-strip">
-        <div style="display: flex; align-items: center; gap: 12px; font-weight: 850; font-size: 1.05rem;">
-            <span style="font-size: 1.6rem;">🚨</span>
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 850; font-size: 1.05rem;">
+            <span style="font-size: 1.5rem; line-height: 1;">🚨</span>
             <span style="color: #ffffff;">{get_text('emergency_alert_title', lang)}</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
@@ -199,9 +205,43 @@ def render_header_nav():
             </a>
             <a href="https://cybercrime.gov.in" target="_blank" style="background: #063970; color: #ffffff; padding: 8px 18px; border-radius: 9999px; 
                                      font-weight: 850; text-decoration: none; font-size: 0.95rem; border: 1.5px solid rgba(255,255,255,0.4); display: inline-flex; align-items: center; gap: 6px;">
-                <span>🌐</span> <span style="color: #ffffff;">cybercrime.gov.in ↗</span>
+                <span>🌐</span> <span style="color: #ffffff;">{get_text('emergency_portal_btn', lang)} ↗</span>
             </a>
         </div>
     </div>
+    <div id="cavi-page-top" style="position: relative; top: 0; left: 0; height: 1px; width: 1px; opacity: 0; pointer-events: none;"></div>
     <div style="margin-bottom: 18px;"></div>
     """)
+
+    # Seamless instant scroll-to-top on navigation (resets parent container scroll position)
+    components.html("""
+    <script>
+    (function() {
+        function resetScroll() {
+            try {
+                if (window.parent && window.parent !== window) {
+                    window.parent.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                    var pDoc = window.parent.document;
+                    if (pDoc) {
+                        if (pDoc.documentElement) pDoc.documentElement.scrollTop = 0;
+                        if (pDoc.body) pDoc.body.scrollTop = 0;
+                        var targets = pDoc.querySelectorAll('.main, section.main, [data-testid="stAppViewContainer"], [data-testid="stMainBlockContainer"], .block-container');
+                        for (var i = 0; i < targets.length; i++) {
+                            if (targets[i]) targets[i].scrollTop = 0;
+                        }
+                        var anchor = pDoc.getElementById('cavi-page-top');
+                        if (anchor && anchor.scrollIntoView) {
+                            anchor.scrollIntoView({ behavior: 'instant', block: 'start' });
+                        }
+                    }
+                }
+            } catch(e) {}
+        }
+        resetScroll();
+        requestAnimationFrame(resetScroll);
+        setTimeout(resetScroll, 30);
+        setTimeout(resetScroll, 100);
+        setTimeout(resetScroll, 250);
+    })();
+    </script>
+    """, height=0, width=0)

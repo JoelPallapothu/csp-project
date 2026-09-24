@@ -40,8 +40,9 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
 
     return f"""
     <style>
-        /* Google Fonts: Noto Sans Telugu for high-quality Telugu glyphs + Plus Jakarta Sans for English */
+        /* Google Fonts: Noto Sans Telugu + Plus Jakarta Sans + Material Symbols Rounded */
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Telugu:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
         :root {{
             --font-main: 'Plus Jakarta Sans', 'Noto Sans Telugu', 'Segoe UI', system-ui, sans-serif;
@@ -66,11 +67,41 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
         }}
 
         /* Base Typography & Background */
-        html, body, [class*="css"], .stMarkdown, .stText, p, div, span, li, button {{
+        html, body, .stApp, .stMarkdown, .stText, p, li {{
             font-family: var(--font-main) !important;
             font-size: {base_font_size};
             color: var(--text-dark);
             -webkit-font-smoothing: antialiased;
+        }}
+
+        div:not([data-testid*="Icon"]):not([class*="material-symbols"]):not([class*="material-icons"]),
+        p, li, a {{
+            font-family: var(--font-main);
+        }}
+
+        /* PRESERVE STREAMLIT MATERIAL SYMBOLS & ICONS LIGATURES (FIXES keyboard_double...) */
+        [data-testid*="stIconMaterial"],
+        .material-symbols-rounded,
+        .material-symbols-outlined,
+        [class*="material-symbols"],
+        [class*="material-icons"],
+        [data-testid="stSidebarCollapseButton"] *,
+        [data-testid="collapsedControl"] *,
+        header button * {{
+            font-family: 'Material Symbols Rounded', 'Material Icons', sans-serif !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
         }}
 
         /* Generous line-height for Telugu script to prevent vowel mark clipping */

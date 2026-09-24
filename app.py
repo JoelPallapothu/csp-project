@@ -124,7 +124,7 @@ if current_page == "home":
                 <span>📞</span> <span>1930</span>
             </a>
             <a href="https://cybercrime.gov.in" target="_blank" style="background: rgba(0,0,0,0.4); color: #ffffff; font-weight: 800; padding: 12px 22px; border-radius: 9999px; text-decoration: none; font-size: 1.0rem; border: 1.5px solid rgba(255,255,255,0.4); display: inline-flex; align-items: center; gap: 6px;">
-                <span>{get_text('home_emergency_portal_btn', lang)}</span> <span>↗</span>
+                <span>🌐</span> <span>{get_text('home_emergency_portal_btn', lang)} ↗</span>
             </a>
         </div>
     </div>
