@@ -174,32 +174,33 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             box-shadow: 0 16px 36px rgba(15, 43, 92, 0.12);
         }}
 
-        /* Hero Banner */
-        .hero-banner {{
-            background: linear-gradient(135deg, #06152b 0%, #0c2349 45%, #1d4ed8 100%);
+        /* Modern Light Hero Banner */
+        .hero-banner-light {{
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 45%, #ffffff 100%);
             border-radius: 26px;
             padding: 38px 36px;
-            color: #ffffff;
-            box-shadow: 0 12px 34px rgba(9, 27, 54, 0.28);
+            color: #091b36;
+            box-shadow: 0 10px 30px rgba(11, 99, 206, 0.08);
             margin-bottom: 26px;
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            border: 2px solid #bae6fd;
             overflow: hidden;
         }}
 
-        .hero-banner h1 {{
-            font-size: calc(2.35rem * {heading_scale}) !important;
-            font-weight: 900 !important;
-            color: #ffffff !important;
+        .hero-banner-light h1 {{
+            font-size: calc(2.3rem * {heading_scale}) !important;
+            font-weight: 950 !important;
+            color: #062b55 !important;
             margin-bottom: 12px !important;
             line-height: 1.25 !important;
             letter-spacing: -0.5px;
         }}
 
-        .hero-banner p {{
+        .hero-banner-light p {{
             font-size: calc(1.15rem * {heading_scale}) !important;
-            color: #e0f2fe !important;
-            line-height: 1.55 !important;
+            color: #1e3a5f !important;
+            font-weight: 600 !important;
+            line-height: 1.6 !important;
             margin-bottom: 0 !important;
         }}
 
@@ -208,7 +209,7 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             background: linear-gradient(90deg, #991b1b 0%, #dc2626 55%, #b91c1c 100%);
             border-radius: 18px;
             padding: 16px 24px;
-            color: #ffffff;
+            color: #ffffff !important;
             box-shadow: 0 6px 22px rgba(220, 38, 38, 0.28);
             margin-bottom: 22px;
             border: 2px solid #fecaca;
@@ -220,21 +221,81 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             animation: pulse-emergency 3.5s infinite;
         }}
 
-        /* Navigation Buttons Enhancement */
+        .emergency-strip * {{
+            color: #ffffff !important;
+        }}
+
+        /* Left Sidebar Navigation Styling */
+        [data-testid="stSidebar"] {{
+            background-color: #f8fafc !important;
+            border-right: 1.5px solid #e2e8f0 !important;
+        }}
+
+        [data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
+            padding-top: 1.2rem !important;
+            padding-left: 1.0rem !important;
+            padding-right: 1.0rem !important;
+        }}
+
+        /* Sidebar Navigation Buttons */
+        [data-testid="stSidebar"] .stButton > button {{
+            width: 100% !important;
+            text-align: left !important;
+            justify-content: flex-start !important;
+            padding: 11px 16px !important;
+            margin-bottom: 6px !important;
+            border-radius: 12px !important;
+            font-weight: 800 !important;
+            font-size: calc(0.96rem * {heading_scale}) !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            border: 1px solid #e2e8f0 !important;
+            background: #ffffff !important;
+            color: #091b36 !important;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+            min-height: 44px !important;
+        }}
+
+        [data-testid="stSidebar"] .stButton > button:hover {{
+            background: #e0f2fe !important;
+            color: #0b63ce !important;
+            border-color: #38bdf8 !important;
+            transform: translateX(3px) !important;
+        }}
+
+        [data-testid="stSidebar"] .stButton > button[kind="primary"] {{
+            background: linear-gradient(135deg, #0b63ce 0%, #063970 100%) !important;
+            color: #ffffff !important;
+            border-left: 5px solid #38bdf8 !important;
+            border-top: none !important;
+            border-right: none !important;
+            border-bottom: none !important;
+            box-shadow: 0 4px 14px rgba(11, 99, 206, 0.3) !important;
+            font-weight: 900 !important;
+        }}
+
+        [data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {{
+            background: linear-gradient(135deg, #0284c7 0%, #0b63ce 100%) !important;
+            color: #ffffff !important;
+        }}
+
+        /* General Button Enhancements */
         .stButton>button {{
             border-radius: 14px !important;
             padding: 12px 18px !important;
-            font-weight: 700 !important;
-            font-size: calc(1.0rem * {heading_scale}) !important;
+            font-weight: 750 !important;
+            font-size: calc(0.98rem * {heading_scale}) !important;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-            border: none !important;
-            box-shadow: 0 3px 10px rgba(15, 43, 92, 0.08) !important;
-            min-height: 48px !important;
+            border: 1px solid #e2e8f0 !important;
+            background: #ffffff !important;
+            color: #091b36 !important;
+            box-shadow: 0 3px 10px rgba(15, 43, 92, 0.06) !important;
+            min-height: 46px !important;
         }}
 
         .stButton>button:hover {{
             transform: translateY(-2px) !important;
-            box-shadow: 0 8px 18px rgba(15, 43, 92, 0.16) !important;
+            box-shadow: 0 8px 18px rgba(15, 43, 92, 0.14) !important;
+            border-color: #cbd5e1 !important;
         }}
 
         .stButton>button:active {{
@@ -243,9 +304,18 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
 
         /* Primary Buttons */
         .stButton>button[kind="primary"] {{
-            background: linear-gradient(135deg, #0f2b5c 0%, #1d4ed8 100%) !important;
+            background: linear-gradient(135deg, #0b63ce 0%, #063970 100%) !important;
             color: #ffffff !important;
-            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3) !important;
+            border: none !important;
+            box-shadow: 0 4px 14px rgba(11, 99, 206, 0.3) !important;
+        }}
+
+        /* Strict Contrast Enforcement for Footer */
+        .cavi-footer * {{
+            color: #e2e8f0;
+        }}
+        .cavi-footer h1, .cavi-footer h2, .cavi-footer h3, .cavi-footer h4, .cavi-footer strong, .cavi-footer b {{
+            color: #ffffff !important;
         }}
 
         /* Badges */

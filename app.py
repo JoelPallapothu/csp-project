@@ -15,13 +15,14 @@ st.set_page_config(
     page_title="CAVI - Cyber Aware Village Initiative",
     page_icon="🛡️",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 from utils.helpers import (
     init_session_state, get_current_lang, get_current_page, navigate_to, calculate_safety_score
 )
 from utils.styling import get_custom_css, render_html
+from utils.hero_illustration import get_hero_composition_svg
 from data.translations import get_text
 from components.header_nav import render_header_nav
 from components.fraud_card import render_frauds_grid, render_fraud_detail
@@ -52,45 +53,36 @@ lang = get_current_lang()
 # 1. HOME PAGE ROUTE
 # ==============================================================================
 if current_page == "home":
-    # Full-Width Premium Hero Section
+    hero_svg = get_hero_composition_svg(lang)
     render_html(f"""
-    <div class="hero-banner">
+    <div class="hero-banner-light">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px;">
-            <div style="flex: 1 1 640px;">
+            <div style="flex: 1 1 580px;">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
-                    <span class="badge-pill" style="background: rgba(56, 189, 248, 0.25); color: #7dd3fc; border: 1.5px solid #38bdf8; font-size: 0.92rem; padding: 6px 14px;">
+                    <span class="badge-pill" style="background: #e0f2fe; color: #0284c7; border: 1.5px solid #38bdf8; font-size: 0.92rem; padding: 6px 14px;">
                         🛡️ {get_text('csp_badge', lang)}
                     </span>
-                    <span class="badge-pill" style="background: rgba(255, 255, 255, 0.16); color: #ffffff; border: 1.5px solid rgba(255,255,255,0.3); font-size: 0.92rem; padding: 6px 14px;">
+                    <span class="badge-pill" style="background: #dcfce7; color: #166534; border: 1.5px solid #86efac; font-size: 0.92rem; padding: 6px 14px;">
                         📍 {get_text('ap_focus', lang)}
                     </span>
+                    <span class="badge-pill" style="background: #fef9c3; color: #854d0e; border: 1.5px solid #fde047; font-size: 0.92rem; padding: 6px 14px;">
+                        🌾 100% ఉచిత ప్రజా సేవ
+                    </span>
                 </div>
-                <h1 style="color: white; margin: 10px 0 16px 0; font-size: 2.6rem; font-weight: 950; line-height: 1.25;">
+                <h1 style="color: #062b55; margin: 10px 0 14px 0; font-size: 2.5rem; font-weight: 950; line-height: 1.25;">
                     {get_text('app_title', lang)}
                 </h1>
-                <p style="margin-bottom: 20px; font-weight: 500; font-size: 1.2rem; line-height: 1.65; color: #e0f2fe; max-width: 720px;">
+                <p style="margin-bottom: 22px; font-weight: 600; font-size: 1.15rem; line-height: 1.65; color: #1e3a5f; max-width: 720px;">
                     {get_text('hero_desc', lang)}
                 </p>
-                <div style="font-size: 1.3rem; font-weight: 900; color: #fef08a; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px;">
+                <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 12px; padding: 10px 18px; display: inline-flex; align-items: center; gap: 10px; font-size: 1.15rem; font-weight: 900; color: #0284c7; box-shadow: 0 2px 8px rgba(2,132,199,0.08);">
                     <span>✨</span> <span>{get_text('tagline', lang)}</span>
                 </div>
             </div>
             
-            <!-- Realistic Visual Composition Right Panel -->
-            <div style="flex: 0 0 340px; text-align: center; background: rgba(255,255,255,0.1); border-radius: 28px; padding: 28px 24px; border: 2px solid rgba(255,255,255,0.25); box-shadow: 0 16px 36px rgba(0,0,0,0.25); backdrop-filter: blur(10px);">
-                <div style="font-size: 3.8rem; margin-bottom: 10px; line-height: 1.1; letter-spacing: 4px;">
-                    🌾📱🛡️🔐
-                </div>
-                <div style="font-weight: 950; font-size: 1.35rem; color: #ffffff; margin-bottom: 6px;">
-                    గ్రామీణ సైబర్ రక్షణ కవచం
-                </div>
-                <div style="font-size: 0.98rem; color: #bae6fd; font-weight: 700; margin-bottom: 12px;">
-                    Village Digital Security Network
-                </div>
-                <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
-                    <span style="background: rgba(22,132,71,0.3); color: #86efac; border: 1px solid #86efac; border-radius: 9999px; padding: 4px 12px; font-size: 0.8rem; font-weight: 800;">👨‍👩‍👧‍👦 కుటుంబ భద్రత</span>
-                    <span style="background: rgba(244,180,0,0.25); color: #fef08a; border: 1px solid #fef08a; border-radius: 9999px; padding: 4px 12px; font-size: 0.8rem; font-weight: 800;">100% ఉచిత ప్రజా సేవ</span>
-                </div>
+            <!-- High-Contrast Visual Composition Vector Panel -->
+            <div style="flex: 0 0 410px; max-width: 100%;">
+                {hero_svg}
             </div>
         </div>
     </div>

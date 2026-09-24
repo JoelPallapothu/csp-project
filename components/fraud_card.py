@@ -10,9 +10,10 @@ from data.frauds import get_all_frauds, get_fraud_by_id
 from data.translations import get_text
 from utils.helpers import get_current_lang, navigate_to, record_fraud_view, render_speech_audio_button
 from utils.styling import render_html
+from utils.fraud_illustrations import get_fraud_illustration_svg
 
 def render_frauds_grid(limit: int = None):
-    """Renders visual cards for fraud types in an elevated responsive grid."""
+    """Renders visual illustrative cards for fraud types in an elevated responsive grid."""
     lang = get_current_lang()
     frauds = get_all_frauds()
     if limit:
@@ -26,18 +27,22 @@ def render_frauds_grid(limit: int = None):
             with cols[j]:
                 f_title = fraud["title"].get(lang, fraud["title"]["te"])
                 f_short = fraud["short_desc"].get(lang, fraud["short_desc"]["te"])
+                illustration_svg = get_fraud_illustration_svg(fraud["id"])
                 
                 render_html(f"""
                 <div class="fraud-grid-card" style="border-top: 5px solid {fraud['color']};">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                            <div style="font-size: 2.5rem; line-height: 1;">{fraud['icon']}</div>
-                            <span class="badge-pill badge-danger" style="font-size: 0.8rem;">{fraud['badge']}</span>
+                        <div style="margin-bottom: 12px; overflow: hidden; border-radius: 12px;">
+                            {illustration_svg}
                         </div>
-                        <div style="font-size: 1.25rem; font-weight: 800; color: #063970; margin-bottom: 8px; line-height: 1.35;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 8px;">
+                            <span style="font-size: 1.4rem;">{fraud['icon']}</span>
+                            <span class="badge-pill badge-danger" style="font-size: 0.8rem; white-space: nowrap;">{fraud['badge']}</span>
+                        </div>
+                        <div style="font-size: 1.22rem; font-weight: 850; color: #063970; margin-bottom: 8px; line-height: 1.35; min-height: 54px;">
                             {f_title}
                         </div>
-                        <div style="font-size: 0.98rem; color: #475569; line-height: 1.55; margin-bottom: 16px;">
+                        <div style="font-size: 0.98rem; color: #334155; line-height: 1.55; margin-bottom: 16px; min-height: 64px;">
                             {f_short}
                         </div>
                     </div>
@@ -48,7 +53,7 @@ def render_frauds_grid(limit: int = None):
                 if st.button(btn_label, key=f"btn_learn_{fraud['id']}", use_container_width=True):
                     record_fraud_view(fraud["id"])
                     navigate_to("frauds", fraud["id"])
-        render_html("<div style='margin-bottom: 16px;'></div>")
+        render_html("<div style='margin-bottom: 18px;'></div>")
 
 def render_fraud_detail(fraud_id: str):
     """Renders the comprehensive interactive learning view for a specific fraud."""
@@ -67,6 +72,7 @@ def render_fraud_detail(fraud_id: str):
     f_audio = fraud["audio_text"].get(lang, fraud["audio_text"]["te"])
     red_flags = fraud["red_flags"].get(lang, fraud["red_flags"]["te"])
     actions = fraud["what_to_do"].get(lang, fraud["what_to_do"]["te"])
+    illustration_svg = get_fraud_illustration_svg(fraud["id"])
 
     # Back Navigation Bar
     col_back, col_title = st.columns([3, 9])
@@ -86,6 +92,13 @@ def render_fraud_detail(fraud_id: str):
         """)
 
     render_html("<hr style='margin: 16px 0 20px 0;'>")
+
+    # Visual Threat Hero Graphic in Detail View
+    render_html(f"""
+    <div style="margin-bottom: 22px; max-width: 720px;">
+        {illustration_svg}
+    </div>
+    """)
 
     # Audio Read-Aloud Bar for Low-Literacy / Illiterate Users
     audio_bar_title = "వినండి – ఆడియో వివరణ (Audio Read-Aloud)" if lang == "te" else "Listen – Audio Narration (Read Aloud)"
