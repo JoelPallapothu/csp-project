@@ -14,13 +14,13 @@
 
 ## 🚀 Key Highlights & Demonstration Features
 
-1. **🌐 Trilingual by Default (Telugu First)**:
-   - **తెలుగు (Telugu - Default)**, **English**, and **हिंदी (Hindi)**.
+1. **🌐 Bilingual by Default (Telugu First & English)**:
+   - **తెలుగు (Telugu - Default)** and **English**.
    - Comprehensive translations across navigation, fraud explanations, real-life dialogues, quiz questions, and emergency guides.
 
 2. **♿ Rural Accessibility Controls**:
    - **Text Sizer (`A-`, `A`, `A+`)**: Dynamically scales typography across cards and headings for senior citizens and users with visual limitations.
-   - **Voice Narration (`🔊 వినండి / Listen`)**: Built-in client-side Web Speech API audio synthesis speaks warnings aloud in Telugu (`te-IN`), Hindi (`hi-IN`), or English (`en-IN`) without requiring paid third-party API keys.
+   - **Voice Narration (`🔊 చదవండి / Read Aloud`)**: Built-in client-side Web Speech API audio synthesis speaks warnings aloud in Telugu (`te-IN`) or English (`en-IN`) without requiring paid third-party API keys.
    - **High-Contrast Color Indicators**: Green for Safe (సురక్షితం), Red for Danger/Fraud (మోసం), Amber for Warning.
 
 3. **🔐 12 Common Village Cyber Frauds (Know the Fraud)**:
@@ -102,7 +102,7 @@ csp-project/
 ├── README.md                   # Complete documentation and faculty demonstration guide
 ├── data/
 │   ├── __init__.py
-│   ├── translations.py         # Full UI translations (Telugu default, English, Hindi)
+│   ├── translations.py         # Full UI translations (Telugu default & English)
 │   ├── frauds.py               # 12 detailed fraud modules with visual workflows, dialogs & audio
 │   ├── rules.py                # 10 Golden Rules & Do's vs Don'ts matrix
 │   ├── quiz_data.py            # 10 Village-oriented interactive quiz questions

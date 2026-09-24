@@ -8,74 +8,80 @@ import streamlit as st
 
 def render_html(html_content: str):
     """
-    Renders HTML safely without any possibility of CommonMark interpreting
-    indented lines as code blocks (<pre><code>).
-    Strips leading and trailing whitespace from every line and joins without newlines.
+    Renders HTML safely using Streamlit's native st.html() engine, completely bypassing
+    CommonMark markdown parsing to eliminate any possibility of raw code block leakage (<pre><code>).
     """
     if not html_content:
         return
     lines = html_content.strip().splitlines()
     cleaned = " ".join(line.strip() for line in lines if line.strip())
-    st.markdown(cleaned, unsafe_allow_html=True)
+    if hasattr(st, "html"):
+        st.html(cleaned)
+    else:
+        st.markdown(cleaned, unsafe_allow_html=True)
 
 def get_custom_css(font_size_mode: str = "normal") -> str:
     """
-    Returns production-grade, public portal CSS with modern glassmorphism,
+    Returns production-grade, desktop-first public portal CSS with modern glassmorphism,
     pulsing alerts, responsive touch controls, and dynamic font accessibility.
     """
     base_font_size = "17px"
     heading_scale = "1.0"
-    card_padding = "24px"
+    card_padding = "26px"
     
     if font_size_mode == "large":
         base_font_size = "20px"
         heading_scale = "1.15"
-        card_padding = "28px"
+        card_padding = "30px"
     elif font_size_mode == "xlarge":
         base_font_size = "23px"
         heading_scale = "1.3"
-        card_padding = "32px"
+        card_padding = "34px"
 
     return f"""
     <style>
-        /* Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Telugu:wght@400;600;700;800;900&display=swap');
+        /* Google Fonts: Noto Sans Telugu for high-quality Telugu glyphs + Plus Jakarta Sans for English */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Telugu:wght@400;500;600;700;800;900&display=swap');
 
         :root {{
             --font-main: 'Plus Jakarta Sans', 'Noto Sans Telugu', 'Segoe UI', system-ui, sans-serif;
-            --primary-navy: #091b36;
-            --primary-blue: #0f2b5c;
-            --royal-blue: #1d4ed8;
-            --cyber-blue: #0284c7;
+            --font-telugu: 'Noto Sans Telugu', 'Segoe UI', sans-serif;
+            --primary-navy: #063970;
+            --primary-blue: #0b63ce;
+            --cyber-blue: #1688d8;
             --cyber-light: #e0f2fe;
-            --safe-green: #15803d;
+            --safe-green: #168447;
             --safe-light: #f0fdf4;
             --safe-border: #86efac;
-            --danger-red: #dc2626;
+            --danger-red: #d62828;
             --danger-dark: #991b1b;
             --danger-light: #fef2f2;
             --danger-border: #fca5a5;
-            --warning-amber: #d97706;
+            --warning-amber: #f4b400;
             --warning-light: #fffbeb;
             --bg-slate: #f8fafc;
             --card-border: #e2e8f0;
-            --text-dark: #0f172a;
+            --text-dark: #091b36;
             --text-muted: #475569;
         }}
 
         /* Base Typography & Background */
-        html, body, [class*="css"], .stMarkdown, .stText {{
+        html, body, [class*="css"], .stMarkdown, .stText, p, div, span, li, button {{
             font-family: var(--font-main) !important;
-            font-size: {base_font_size} !important;
+            font-size: {base_font_size};
             color: var(--text-dark);
-            background-color: var(--bg-slate);
             -webkit-font-smoothing: antialiased;
+        }}
+
+        /* Generous line-height for Telugu script to prevent vowel mark clipping */
+        p, li, div {{
+            line-height: 1.68 !important;
         }}
 
         /* Clean Streamlit Default Chrome */
         header[data-testid="stHeader"] {{
-            background: rgba(248, 250, 252, 0.96) !important;
-            backdrop-filter: blur(10px) !important;
+            background: rgba(248, 250, 252, 0.98) !important;
+            backdrop-filter: blur(12px) !important;
             border-bottom: 1px solid #e2e8f0 !important;
         }}
 
@@ -83,30 +89,45 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             visibility: hidden !important;
         }}
 
+        /* Desktop Full-Screen Viewport Container */
         .block-container {{
-            padding-top: 1.2rem !important;
+            padding-top: 0.8rem !important;
             padding-bottom: 3.5rem !important;
-            max-width: 1240px !important;
+            max-width: 1540px !important;
+            width: 96% !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
         }}
 
         /* Keyframe Animations */
+        @keyframes fadeIn {{
+            from {{ opacity: 0; transform: translateY(6px); }}
+            to {{ opacity: 1; transform: translateY(0); }}
+        }}
+
+        @keyframes shieldFloat {{
+            0%, 100% {{ transform: translateY(0px); }}
+            50% {{ transform: translateY(-6px); }}
+        }}
+
         @keyframes pulse-emergency {{
             0% {{
-                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5);
+                box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.5);
                 transform: scale(1);
             }}
             50% {{
-                box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
-                transform: scale(1.006);
+                box-shadow: 0 0 0 10px rgba(214, 40, 40, 0);
+                transform: scale(1.004);
             }}
             100% {{
-                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+                box-shadow: 0 0 0 0 rgba(214, 40, 40, 0);
                 transform: scale(1);
             }}
         }}
 
-        /* Prevent Any Errant Pre/Code Rendering of HTML */
-        pre:has(div), pre:has(span), pre:has(p), pre:has(h1), pre:has(h2), pre:has(h3) {{
+        /* Eradicate Any Errant Pre/Code Rendering of HTML */
+        pre:has(div), pre:has(span), pre:has(p), pre:has(h1), pre:has(h2), pre:has(h3),
+        code:has(div), code:has(span) {{
             background: transparent !important;
             border: none !important;
             padding: 0 !important;
@@ -334,6 +355,27 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             margin-top: 45px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.2);
             border: 1px solid rgba(255,255,255,0.08);
+        }}
+
+        /* Section Numbering & Headers */
+        .section-header-box {{
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            flex-wrap: wrap;
+        }}
+
+        .section-number {{
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            background: #e0f2fe;
+            padding: 4px 12px;
+            border-radius: 8px;
+            letter-spacing: 1px;
         }}
 
         /* Responsive Mobile Layout Adjustments */

@@ -1,6 +1,7 @@
 """
 CAVI - Cyber Aware Village Initiative
-Trilingual Translations System: Telugu (Default), English, Hindi
+Bilingual Translations System: Telugu (Default) and English
+Zero Hindi entries as strictly required.
 """
 
 TRANSLATIONS = {
@@ -16,13 +17,21 @@ TRANSLATIONS = {
         
         # Navigation
         "nav_home": "హోమ్",
-        "nav_frauds": "సైబర్ మోసాలు",
-        "nav_simulations": "మోసాల డెమోలు (Spot Scam)",
+        "nav_frauds": "మోసాలు తెలుసుకోండి",
+        "nav_simulations": "స్కామ్ గుర్తించండి",
         "nav_videos": "అవగాహన వీడియోలు",
         "nav_rules": "భద్రతా సూత్రాలు",
         "nav_quiz": "సైబర్ క్విజ్",
         "nav_report": "ఫిర్యాదు చేయండి (1930)",
-        "nav_about": "ప్రాజెక్ట్ గురించి",
+        "nav_about": "ప్రాజెక్ట్ సమాచారం",
+        
+        # Section Numbers & Headers
+        "sec_01_frauds": "01 — మోసాలు తెలుసుకోండి (KNOW THE FRAUD)",
+        "sec_02_videos": "02 — అవగాహన వీడియోలు (AWARENESS VIDEOS)",
+        "sec_03_rules": "03 — భద్రతా మార్గదర్శి (SAFETY GUIDE)",
+        "sec_04_quiz": "04 — సైబర్ క్విజ్ (CYBER QUIZ)",
+        "sec_05_sims": "05 — స్కామ్ గుర్తించండి (SPOT THE SCAM)",
+        "sec_06_report": "06 — ఫిర్యాదు చేయండి (REPORT FRAUD - 1930)",
         
         # Accessibility
         "font_size_label": "అక్షరాల పరిమాణం:",
@@ -61,7 +70,7 @@ TRANSLATIONS = {
         "stat_sims_title": "డెమో పరీక్షలు",
         "stat_sims_val": "లైవ్ సిమ్యులేటర్లు",
         "stat_langs_title": "భాషలు",
-        "stat_langs_val": "3 భాషలు",
+        "stat_langs_val": "తెలుగు & English",
         
         # Educational Progress
         "progress_title": "మీ సైబర్ భద్రత అవగాహన స్థాయి",
@@ -73,7 +82,7 @@ TRANSLATIONS = {
         "safety_disclaimer": "⚠️ గమనిక: ఇది విద్యాసంబంధిత అవగాహన యాప్ మాత్రమే. ఇందులో మీ అసలైన బ్యాంక్ పిన్, ఓటీపీ లేదా ఆధార్ నంబర్లను ఎప్పుడూ నమోదు చేయవద్దు.",
         
         # Common Frauds Preview
-        "common_frauds_heading": "గ్రామాల్లో ఎక్కువగా జరిగే సైబర్ మోసాలు",
+        "common_frauds_heading": "గ్రామాల్లో ఎక్కువగా జరిగే 12 ప్రధాన సైబర్ మోసాలు",
         "common_frauds_sub": "క్రింది కార్డులపై నొక్కి ప్రతి మోసం ఎలా జరుగుతుందో సులభంగా తెలుసుకోండి",
         "btn_learn_more": "పూర్తి వివరాలు చూడండి ➔",
         
@@ -105,12 +114,20 @@ TRANSLATIONS = {
         # Navigation
         "nav_home": "Home",
         "nav_frauds": "Know the Fraud",
-        "nav_simulations": "Scam Simulators",
+        "nav_simulations": "Spot the Scam",
         "nav_videos": "Awareness Videos",
         "nav_rules": "Safety Guide",
         "nav_quiz": "Cyber Quiz",
         "nav_report": "Report Fraud (1930)",
         "nav_about": "About CAVI",
+        
+        # Section Numbers & Headers
+        "sec_01_frauds": "01 — KNOW THE FRAUD",
+        "sec_02_videos": "02 — AWARENESS VIDEOS",
+        "sec_03_rules": "03 — SAFETY GUIDE",
+        "sec_04_quiz": "04 — CYBER QUIZ",
+        "sec_05_sims": "05 — SPOT THE SCAM",
+        "sec_06_report": "06 — REPORT FRAUD (1930)",
         
         # Accessibility
         "font_size_label": "Text Size:",
@@ -149,7 +166,7 @@ TRANSLATIONS = {
         "stat_sims_title": "Interactive Labs",
         "stat_sims_val": "Live Simulators",
         "stat_langs_title": "Languages",
-        "stat_langs_val": "3 Languages",
+        "stat_langs_val": "Telugu & English",
         
         # Educational Progress
         "progress_title": "Your Cyber Safety Learning Progress",
@@ -161,7 +178,7 @@ TRANSLATIONS = {
         "safety_disclaimer": "⚠️ Notice: This is an educational awareness application. NEVER enter your real bank PIN, OTP, or Aadhaar number anywhere in this app.",
         
         # Common Frauds Preview
-        "common_frauds_heading": "Common Cyber Frauds Targeting Villages",
+        "common_frauds_heading": "12 Common Cyber Frauds Targeting Rural Citizens",
         "common_frauds_sub": "Click on any card below to learn how scammers operate and how to stay protected",
         "btn_learn_more": "Learn More ➔",
         
@@ -178,94 +195,6 @@ TRANSLATIONS = {
         "dont_label": "DON'T (Danger Actions) ❌",
         "footer_text": "Cyber Aware Village Initiative (CAVI) — Community Service Project for Rural Cyber Fraud Prevention.",
         "footer_rights": "Developed for public welfare, student exhibition, and grassroots digital safety education.",
-    },
-    
-    "hi": {
-        # App Identity
-        "app_name": "CAVI",
-        "app_full_name": "साइबर अवेयर विलेज इनिशिएटिव (CAVI)",
-        "app_title": "ग्रामीण नागरिकों में साइबर धोखाधड़ी रोकने हेतु जागरूकता",
-        "app_subtitle": "कम पढ़े-लिखे ग्रामीणों, किसानों, महिलाओं के लिए सरल डिजिटल सुरक्षा मंच",
-        "tagline": "सतर्क रहें - सुरक्षित रहें। साइबर धोखाधड़ी से खुद को बचाएं।",
-        "csp_badge": "कम्युनिटी सर्विस प्रोजेक्ट (CSP)",
-        "ap_focus": "आंध्र प्रदेश एवं देश के ग्रामीण अंचलों के लिए विशेष रूप से तैयार",
-        
-        # Navigation
-        "nav_home": "होम",
-        "nav_frauds": "साइबर धोखाधड़ी",
-        "nav_simulations": "धोखाधड़ी डेमो (Spot Scam)",
-        "nav_videos": "जागरूकता वीडियो",
-        "nav_rules": "सुरक्षा नियम",
-        "nav_quiz": "सुरक्षा क्विज़",
-        "nav_report": "शिकायत करें (1930)",
-        "nav_about": "CAVI के बारे में",
-        
-        # Accessibility
-        "font_size_label": "अक्षर का आकार:",
-        "font_normal": "सामान्य",
-        "font_large": "बड़ा",
-        "font_xlarge": "बहुत बड़ा",
-        "listen_btn": "सुनिए 🔊",
-        "stop_audio_btn": "रोकें ⏹️",
-        "audio_playing": "आवाज़ चल रही है...",
-        
-        # Emergency Bar
-        "emergency_alert_title": "🚨 साइबर धोखाधड़ी हुई? घबराएं नहीं – तुरंत 1930 पर कॉल करें!",
-        "emergency_call_btn": "📞 तुरंत 1930 डायल करें",
-        "emergency_portal_btn": "🌐 राष्ट्रीय साइबर अपराध पोर्टल",
-        "emergency_golden_hour": "गोल्डन आवर: धोखाधड़ी के 2-3 घंटे के भीतर शिकायत करने पर पैसे वापस मिलने की संभावना सबसे अधिक होती है!",
-        
-        # Hero Section
-        "hero_title": "आपके स्मार्टफोन की सुरक्षा – आपके ही हाथों में!",
-        "hero_desc": "बैंक अधिकारी, पुलिस या लॉटरी वाले कभी भी आपका OTP या UPI PIN नहीं मांगते। किसी भी अजनबी को अपने गोपनीय नंबर न बताएं।",
-        "hero_btn_learn": "धोखाधड़ी पहचानें 🛡️",
-        "hero_btn_videos": "जागरूकता वीडियो 🎥",
-        "hero_btn_quiz": "साइबर क्विज़ 🧠",
-        "hero_btn_spot_scam": "धोखा पहचानें 🎭",
-        "hero_btn_report": "शिकायत दर्ज करें 🚨",
-        
-        # Home Compact Emergency Card
-        "home_emergency_title": "🚨 साइबर धोखाधड़ी हुई? तुरंत 1930 पर कॉल करें!",
-        "home_emergency_desc": "गोल्डन आवर: 2-3 घंटे के भीतर रिपोर्ट करने पर जालसाज के खाते फ्रीज कर पैसे वापस पाने की संभावना सर्वाधिक होती है। cybercrime.gov.in पर भी शिकायत करें।",
-        "home_emergency_portal_btn": "🌐 cybercrime.gov.in पर शिकायत करें",
-        
-        # Stats
-        "stat_tips_title": "सुरक्षा नियम",
-        "stat_tips_val": "10 सुनहरे नियम",
-        "stat_frauds_title": "प्रमुख धोखाधड़ी",
-        "stat_frauds_val": "12 प्रकार के धोखे",
-        "stat_sims_title": "प्रैक्टिकल डेमो",
-        "stat_sims_val": "लाइव सिमुलेटर",
-        "stat_langs_title": "भाषाएं",
-        "stat_langs_val": "3 भाषाएं",
-        
-        # Educational Progress
-        "progress_title": "आपकी साइबर सुरक्षा सीखने की प्रगति",
-        "progress_status_starter": "शुरुआती स्तर - सीखना शुरू करें!",
-        "progress_status_learning": "अच्छी प्रगति - और अधिक जानें!",
-        "progress_status_expert": "बहुत बढ़िया! आप ग्रामीण साइबर रक्षक हैं!",
-        
-        # Educational Warning
-        "safety_disclaimer": "⚠️ सूचना: यह केवल एक शैक्षणिक जागरूकता ऐप है। इसमें अपना असली बैंक पिन, ओटीपी या आधार नंबर कभी दर्ज न करें।",
-        
-        # Common Frauds Preview
-        "common_frauds_heading": "गांवों में होने वाली प्रमुख साइबर धोखाधड़ी",
-        "common_frauds_sub": "नीचे दिए गए कार्डों पर क्लिक करके जानें कि धोखेबाज कैसे फंसाते हैं और कैसे बचें",
-        "btn_learn_more": "विस्तार से जानें ➔",
-        
-        # Poster Feature
-        "poster_heading": "CAVI मूल सामुदायिक जागरूकता पोस्टर",
-        "poster_sub": "ग्राम पंचायतों और सामुदायिक केंद्रों पर जागरूकता फैलाने हेतु पोस्टर",
-        "poster_view_full": "पोस्टर बड़ा करके देखें 🔍",
-        "poster_download": "पोस्टर डाउनलोड करें 📥",
-        
-        # General
-        "safe_label": "सुरक्षित (SAFE) ✅",
-        "scam_label": "धोखा (SCAM) ❌",
-        "do_label": "क्या करें (DO) ✅",
-        "dont_label": "क्या न करें (DON'T) ❌",
-        "footer_text": "साइबर अवेयर विलेज इनिशिएटिव (CAVI) — ग्रामीण साइबर धोखाधड़ी रोकथाम जागरूकता पहल।",
-        "footer_rights": "सार्वजनिक कल्याण एवं ग्रामीण डिजिटल सुरक्षा शिक्षा के लिए समर्पित।",
     }
 }
 
