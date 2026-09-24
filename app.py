@@ -31,6 +31,7 @@ from components.video_center import render_video_center
 from components.safety_guide import render_safety_guide
 from components.quiz import render_quiz
 from components.emergency_view import render_emergency_page
+from components.chatbot import render_chatbot
 from components.about_view import render_about_page
 from components.poster_showcase import render_poster_showcase
 from components.footer import render_footer
@@ -314,15 +315,31 @@ elif current_page == "report":
     render_emergency_page()
 
 # ==============================================================================
-# 8. ABOUT CAVI ROUTE (07)
+# 8. CAVI CYBER SAFETY ASSISTANT ROUTE (07 - AI CHATBOT)
 # ==============================================================================
-elif current_page == "about":
+elif current_page == "chatbot":
     render_html(f"""
     <div class="section-header-box">
         <span class="section-number">07</span>
         <div>
             <h2 style="color: #063970; margin: 0; font-size: 1.9rem; font-weight: 900;">
-                ℹ️ {get_text('nav_about', lang)}
+                🤖 {get_text('sec_07_chatbot', lang)}
+            </h2>
+        </div>
+    </div>
+    """)
+    render_chatbot()
+
+# ==============================================================================
+# 9. ABOUT CAVI ROUTE (08)
+# ==============================================================================
+elif current_page == "about":
+    render_html(f"""
+    <div class="section-header-box">
+        <span class="section-number">08</span>
+        <div>
+            <h2 style="color: #063970; margin: 0; font-size: 1.9rem; font-weight: 900;">
+                ℹ️ {get_text('sec_08_about', lang)}
             </h2>
         </div>
     </div>

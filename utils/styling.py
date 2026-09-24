@@ -252,8 +252,84 @@ def get_custom_css(font_size_mode: str = "normal") -> str:
             animation: pulse-emergency 3.5s infinite;
         }}
 
-        .emergency-strip * {{
+        .emergency-strip-title {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 850;
+            font-size: 1.05rem;
             color: #ffffff !important;
+        }}
+
+        .emergency-strip-actions {{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }}
+
+        /* 1930 Call Button: High contrast, minimum width to prevent collapse */
+        .cavi-call-1930-btn {{
+            background: #ffffff !important;
+            color: #b91c1c !important;
+            border: 2px solid #ffffff !important;
+            padding: 9px 24px !important;
+            border-radius: 9999px !important;
+            font-weight: 950 !important;
+            font-size: 1.15rem !important;
+            line-height: 1 !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            min-width: 140px !important;
+            text-align: center !important;
+            transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+        }}
+
+        .cavi-call-1930-btn:hover {{
+            transform: scale(1.04) !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
+            color: #991b1b !important;
+        }}
+
+        .cavi-call-1930-btn span {{
+            color: #b91c1c !important;
+            font-weight: 950 !important;
+        }}
+
+        /* Cybercrime Portal Button */
+        .cavi-portal-btn {{
+            background: #063970 !important;
+            color: #ffffff !important;
+            padding: 9px 20px !important;
+            border-radius: 9999px !important;
+            font-weight: 850 !important;
+            font-size: 1.0rem !important;
+            line-height: 1 !important;
+            text-decoration: none !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            min-width: 190px !important;
+            text-align: center !important;
+            box-shadow: 0 4px 12px rgba(6, 57, 112, 0.25) !important;
+            transition: transform 0.18s ease !important;
+        }}
+
+        .cavi-portal-btn:hover {{
+            transform: scale(1.03) !important;
+            background: #0a4f9d !important;
+            color: #ffffff !important;
+        }}
+
+        .cavi-portal-btn span {{
+            color: #ffffff !important;
+            font-weight: 850 !important;
         }}
 
         /* Left Sidebar Navigation Styling */

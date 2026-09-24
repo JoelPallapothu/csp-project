@@ -50,7 +50,7 @@ def render_sidebar_nav():
         nav_menu_label = "📌 ప్రధాన మెనూ (Navigation)" if lang == "te" else "📌 Main Navigation"
         render_html(f"<div style='font-size: 0.82rem; font-weight: 850; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; padding-left: 4px;'>{nav_menu_label}</div>")
 
-        # 8 Full Navigation Items - Complete names, zero truncation
+        # 9 Full Navigation Items - Complete names, zero truncation
         nav_items = [
             {"id": "home", "icon": "🏠", "label": get_text('nav_home', lang)},
             {"id": "frauds", "icon": "⚠️", "label": get_text('nav_frauds', lang)},
@@ -59,6 +59,7 @@ def render_sidebar_nav():
             {"id": "quiz", "icon": "🧠", "label": get_text('nav_quiz', lang)},
             {"id": "simulations", "icon": "🎭", "label": get_text('nav_simulations', lang)},
             {"id": "report", "icon": "🚨", "label": get_text('nav_report', lang)},
+            {"id": "chatbot", "icon": "🤖", "label": get_text('nav_chatbot', lang)},
             {"id": "about", "icon": "ℹ️", "label": get_text('nav_about', lang)}
         ]
 
@@ -156,6 +157,7 @@ def render_header_nav():
         "quiz": get_text('nav_quiz', lang),
         "simulations": get_text('nav_simulations', lang),
         "report": get_text('nav_report', lang),
+        "chatbot": get_text('nav_chatbot', lang),
         "about": get_text('nav_about', lang)
     }
     active_label = page_labels.get(current_page, "")
@@ -194,18 +196,16 @@ def render_header_nav():
     # Emergency Alert Strip (Top notification - exactly one icon per element)
     render_html(f"""
     <div class="emergency-strip">
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 850; font-size: 1.05rem;">
+        <div class="emergency-strip-title">
             <span style="font-size: 1.5rem; line-height: 1;">🚨</span>
             <span style="color: #ffffff;">{get_text('emergency_alert_title', lang)}</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-            <a href="tel:1930" style="background: #ffffff; color: #dc2626; padding: 8px 22px; border-radius: 9999px; 
-                                     font-weight: 950; text-decoration: none; font-size: 1.05rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: inline-flex; align-items: center; gap: 6px;">
-                <span>📞</span> <span style="color: #dc2626;">{get_text('emergency_call_btn', lang)}</span>
+        <div class="emergency-strip-actions">
+            <a href="tel:1930" class="cavi-call-1930-btn">
+                <span>📞</span> <span>1930</span>
             </a>
-            <a href="https://cybercrime.gov.in" target="_blank" style="background: #063970; color: #ffffff; padding: 8px 18px; border-radius: 9999px; 
-                                     font-weight: 850; text-decoration: none; font-size: 0.95rem; border: 1.5px solid rgba(255,255,255,0.4); display: inline-flex; align-items: center; gap: 6px;">
-                <span>🌐</span> <span style="color: #ffffff;">{get_text('emergency_portal_btn', lang)} ↗</span>
+            <a href="https://cybercrime.gov.in" target="_blank" class="cavi-portal-btn">
+                <span>🌐</span> <span>cybercrime.gov.in ↗</span>
             </a>
         </div>
     </div>
